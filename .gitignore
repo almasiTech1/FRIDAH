@@ -57,3 +57,13 @@ logs/
 
 # Android debug signing key
 **/debug.keystore
+
+# Android debug signing keys
+**/debug.keystore
+
+# Private invoices
+**/invoice*.pdf
+**/invoices*.pdf
+
+# Android debug keys
+**/debug.keystore

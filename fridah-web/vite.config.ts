@@ -1,3 +1,4 @@
+
 import { defineConfig } from 'vitest/config'
 import { loadEnv } from 'vite'
 import { writeFileSync } from 'node:fs'
@@ -6,8 +7,11 @@ import vue from '@vitejs/plugin-vue'
 import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig(({ mode }) => ({
+  // GitHub Pages project URL: https://almasiTech1.github.io/FRIDAH/
+  // Local development continues using the root path.
+  base: mode === 'production' ? '/FRIDAH/' : '/',
+
   plugins: [vue(), {
-    // Writes dist/_headers (Cloudflare Pages / Netlify) and dist/security-headers.nginx.conf next to the built site.
     name: 'fridah-security-headers',
     apply: 'build' as const,
     closeBundle() {
@@ -16,12 +20,19 @@ export default defineConfig(({ mode }) => ({
       writeFileSync('dist/security-headers.nginx.conf', nginxSnippet(api))
     },
   }],
+
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  test: { environment: 'jsdom', globals: true, include: ['src/**/*.test.ts'] },
+
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    include: ['src/**/*.test.ts']
+  },
+
   server: {
     port: 5173,
     proxy: {
