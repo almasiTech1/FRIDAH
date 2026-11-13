@@ -1,0 +1,56 @@
+# ===========================================================================
+# FRIDAH monorepo .gitignore
+# ===========================================================================
+
+# --- Secrets / environment files (never commit real values) ---
+.env
+.env.*
+!.env.example
+!.env.production.example
+*.pem
+*.key
+!*.example.key
+credentials.json
+serviceAccountKey.json
+firebase-adminsdk*.json
+
+# --- Python / Django (fridah-backend) ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+*.sqlite3
+media/
+staticfiles/
+celerybeat-schedule
+celerybeat.pid
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+
+# --- Node / Vue (fridah-web) ---
+node_modules/
+dist/
+.vite/
+*.local
+
+# --- React Native (fridah-mobile) ---
+ios/Pods/
+ios/build/
+android/.gradle/
+android/app/build/
+*.jsbundle
+.expo/
+
+# --- Editor / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Logs ---
+*.log
+logs/

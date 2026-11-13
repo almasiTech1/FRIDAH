@@ -1,0 +1,80 @@
+{
+  "common": {
+    "search": "Search…",
+    "logout": "Logout",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "loading": "Loading…",
+    "yes": "Yes",
+    "no": "No",
+    "close": "Close",
+    "viewAll": "View all",
+    "back": "Back"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "properties": "Properties",
+    "units": "Units",
+    "leases": "Leases",
+    "invoices": "Invoices",
+    "maintenance": "Maintenance",
+    "payments": "Payments",
+    "bookings": "Bookings",
+    "listings": "Listings",
+    "jobs": "Jobs",
+    "notifications": "Notifications",
+    "messages": "Messages",
+    "documents": "Documents",
+    "renewals": "Lease Renewals",
+    "blacklist": "Tenant Blacklist",
+    "settings": "Settings"
+  },
+  "auth": {
+    "welcomeBack": "Welcome back",
+    "signInPrompt": "Sign in to your FRIDAH account",
+    "emailAddress": "Email address",
+    "password": "Password",
+    "signIn": "Sign in",
+    "noAccount": "Don't have an account?",
+    "register": "Register",
+    "invalidCredentials": "Invalid email or password."
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "toggle": "Toggle dark mode"
+  },
+  "language": {
+    "english": "English",
+    "swahili": "Kiswahili",
+    "select": "Language"
+  },
+  "riskScore": {
+    "title": "Tenant Risk Score",
+    "onTimeRate": "On-time payment rate",
+    "flags": "Blacklist flags",
+    "kycVerified": "KYC verified",
+    "monthsOnPlatform": "Months on platform"
+  },
+  "blacklist": {
+    "flagTenant": "Flag tenant",
+    "reason": "Reason",
+    "details": "Details",
+    "amountOwed": "Amount owed",
+    "respond": "Respond",
+    "active": "Active",
+    "disputed": "Disputed",
+    "removed": "Removed"
+  },
+  "renewal": {
+    "title": "Lease Renewal",
+    "proposedRent": "Proposed rent",
+    "proposedTerm": "Proposed term",
+    "accept": "Accept renewal",
+    "decline": "Decline renewal",
+    "pending": "Awaiting your response",
+    "accepted": "Accepted",
+    "declined": "Declined"
+  }
+}

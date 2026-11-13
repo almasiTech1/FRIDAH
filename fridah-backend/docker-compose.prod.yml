@@ -1,0 +1,29 @@
+# Production-only additions on top of docker-compose.yml. Use both files together:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+#
+# Adds the certbot service that docker-compose.yml's nginx service already expects
+# (it mounts the certbot_certs volume, but nothing populated it until now) and a
+# webroot volume shared between nginx and certbot for the HTTP-01 challenge.
+
+services:
+  nginx:
+    volumes:
+      - certbot_webroot:/var/www/certbot
+
+  certbot:
+    image: certbot/certbot
+    restart: unless-stopped
+    volumes:
+      - certbot_certs:/etc/letsencrypt
+      - certbot_webroot:/var/www/certbot
+    # Re-checks twice a day and renews only if within 30 days of expiry (certbot's
+    # own default threshold) - safe to leave running indefinitely.
+    entrypoint: >
+      sh -c "trap exit TERM;
+             while :; do
+               certbot renew --webroot -w /var/www/certbot --quiet;
+               sleep 12h & wait $${!};
+             done"
+
+volumes:
+  certbot_webroot:

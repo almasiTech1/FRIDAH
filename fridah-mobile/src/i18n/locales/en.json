@@ -1,0 +1,45 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "loading": "Loading…",
+    "signOut": "Sign Out"
+  },
+  "settings": {
+    "title": "App Settings",
+    "darkMode": "Dark mode",
+    "language": "Language",
+    "english": "English",
+    "swahili": "Kiswahili"
+  },
+  "renewal": {
+    "title": "Lease Renewal",
+    "pending": "A renewal offer is waiting for your response",
+    "proposedRent": "Proposed rent",
+    "proposedTerm": "Proposed term",
+    "accept": "Accept renewal",
+    "decline": "Decline renewal",
+    "confirmDecline": "Confirm decline",
+    "declineReasonPlaceholder": "Let your landlord know why… (optional)",
+    "accepted": "Accepted",
+    "declined": "Declined",
+    "expired": "Expired",
+    "none": "No renewal offers right now."
+  },
+  "riskScore": {
+    "title": "Tenant Risk Score",
+    "onTimeRate": "On-time payment rate",
+    "kycVerified": "KYC verified",
+    "monthsOnPlatform": "Months on platform",
+    "recalculate": "Recalculate"
+  },
+  "blacklist": {
+    "title": "Tenant Screening",
+    "flagTenant": "Flag tenant",
+    "reason": "Reason",
+    "details": "Details",
+    "amountOwed": "Amount owed",
+    "submit": "Submit flag",
+    "noFlags": "No active blacklist flags for this tenant."
+  }
+}

@@ -1,0 +1,47 @@
+name: Mobile CI
+
+on:
+  push:
+    paths:
+      - 'fridah-mobile/**'
+      - '.github/workflows/mobile-ci.yml'
+  pull_request:
+    paths:
+      - 'fridah-mobile/**'
+      - '.github/workflows/mobile-ci.yml'
+
+defaults:
+  run:
+    working-directory: fridah-mobile
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: fridah-mobile/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type-check
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+        # Not yet blocking: the codebase currently has ~41 pre-existing lint errors
+        # (mostly unused imports/vars, a couple of missing useEffect dependencies)
+        # that need a dedicated cleanup pass. Flip this to blocking once that's done.
+        continue-on-error: true
+
+      - name: Run tests
+        run: npm test -- --ci --passWithNoTests
+        # --passWithNoTests: no test files exist yet (mobile testing hasn't started -
+        # see project status). Remove this flag once real tests are added, so an
+        # empty test suite doesn't silently mask a future regression.

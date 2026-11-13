@@ -1,0 +1,37 @@
+name: Web CI
+
+on:
+  push:
+    paths:
+      - 'fridah-web/**'
+      - '.github/workflows/web-ci.yml'
+  pull_request:
+    paths:
+      - 'fridah-web/**'
+      - '.github/workflows/web-ci.yml'
+
+defaults:
+  run:
+    working-directory: fridah-web
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: fridah-web/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type-check and build
+        run: npm run build
+
+      - name: Audit dependencies
+        run: npm audit --audit-level=high

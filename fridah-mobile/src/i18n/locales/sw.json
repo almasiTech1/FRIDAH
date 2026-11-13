@@ -1,0 +1,45 @@
+{
+  "common": {
+    "save": "Hifadhi",
+    "cancel": "Ghairi",
+    "loading": "Inapakia…",
+    "signOut": "Toka"
+  },
+  "settings": {
+    "title": "Mipangilio ya Programu",
+    "darkMode": "Hali ya giza",
+    "language": "Lugha",
+    "english": "Kiingereza",
+    "swahili": "Kiswahili"
+  },
+  "renewal": {
+    "title": "Uhuishaji wa Mkataba",
+    "pending": "Ofa ya uhuishaji inasubiri jibu lako",
+    "proposedRent": "Kodi inayopendekezwa",
+    "proposedTerm": "Muda unaopendekezwa",
+    "accept": "Kubali uhuishaji",
+    "decline": "Kataa uhuishaji",
+    "confirmDecline": "Thibitisha kukataa",
+    "declineReasonPlaceholder": "Mjulishe mwenye nyumba sababu… (si lazima)",
+    "accepted": "Imekubaliwa",
+    "declined": "Imekataliwa",
+    "expired": "Imepitwa na wakati",
+    "none": "Hakuna ofa za uhuishaji kwa sasa."
+  },
+  "riskScore": {
+    "title": "Alama ya Hatari ya Mpangaji",
+    "onTimeRate": "Kiwango cha malipo kwa wakati",
+    "kycVerified": "KYC imethibitishwa",
+    "monthsOnPlatform": "Miezi kwenye jukwaa",
+    "recalculate": "Hesabu upya"
+  },
+  "blacklist": {
+    "title": "Uchunguzi wa Mpangaji",
+    "flagTenant": "Weka alama mpangaji",
+    "reason": "Sababu",
+    "details": "Maelezo",
+    "amountOwed": "Kiasi kinachodaiwa",
+    "submit": "Wasilisha alama",
+    "noFlags": "Hakuna alama za orodha nyeusi kwa mpangaji huyu."
+  }
+}

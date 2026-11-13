@@ -1,0 +1,1 @@
+import{F as e,O as t,v as n,w as r}from"./vue.runtime.esm-bundler-uMuKxGAF.js";import{t as i}from"./OwnerPortfolio-CAbvhxtv.js";t();var a=r({__name:`ManagedProperties`,setup(t){return(t,r)=>(e(),n(i,{"statements-path":`/landlord/statements`,"accent-text":`text-landlord-600`}))}});export{a as default};

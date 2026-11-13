@@ -1,0 +1,97 @@
+﻿
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:-fridah}
+      POSTGRES_USER: ${DB_USER:-fridah}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-fridah}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-fridah} -d ${DB_NAME:-fridah}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      DB_HOST: db
+      REDIS_URL: redis://redis:6379/0
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - media:/app/media
+      - static:/app/staticfiles
+      - logs:/app/logs
+    command: >
+      sh -c "python manage.py migrate &&
+             gunicorn config.wsgi:application --bind 0.0.0.0:8000 --workers 4 --timeout 60"
+    ports:
+      - "8000:8000"
+
+  celery_worker:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      DB_HOST: db
+      REDIS_URL: redis://redis:6379/0
+    depends_on:
+      - backend
+    volumes:
+      - media:/app/media
+      - logs:/app/logs
+    command: celery -A config worker -l info --concurrency=4
+
+  celery_beat:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      DB_HOST: db
+      REDIS_URL: redis://redis:6379/0
+    depends_on:
+      - backend
+    volumes:
+      - logs:/app/logs
+    command: celery -A config beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
+
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.local.conf:/etc/nginx/conf.d/default.conf:ro
+      - static:/app/staticfiles:ro
+      - media:/app/media:ro
+
+volumes:
+  pgdata:
+  media:
+  static:
+  logs:
+
+

@@ -1,0 +1,33 @@
+# Core framework - bumped from Django 4.2 LTS to Django 6.0 (latest feature release,
+# requires Python >=3.12, confirmed Python 3.14 support). If you'd rather stay on an
+# LTS with a longer support window, use Django 5.2.x (LTS through April 2028) instead.
+Django==6.0.8
+djangorestframework==3.18.2
+djangorestframework-simplejwt==5.5.1
+django-cors-headers==4.7.0
+django-filter==25.1
+django-celery-beat==2.9.0
+# drf-yasg is effectively unmaintained (last real release years ago) and does not
+# officially support DRF 3.17/Django 6.0. Swapped for drf-spectacular, the actively
+# maintained OpenAPI 3 schema generator DRF's own docs now recommend.
+drf-spectacular==0.29.0
+celery==5.5.3
+redis==5.3.1
+django-redis==5.4.0
+psycopg[binary]==3.2.13
+python-decouple==3.8
+requests==2.33.0
+reportlab==4.3.1
+Pillow==13.0.0
+factory-boy==3.3.3
+whitenoise==6.8.2
+gunicorn==23.0.0
+python-dateutil==2.9.0.post0
+africastalking==1.2.9
+cryptography==50.0.0
+sentry-sdk==2.20.0
+django-storages==1.14.5
+boto3==1.37.0
+firebase-admin==6.6.0
+anthropic==0.120.0
+PyJWT==2.15.0

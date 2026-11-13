@@ -1,0 +1,10 @@
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com blob:; style-src 'self' 'unsafe-inline' https://*.googleapis.com https://*.gstatic.com https://*.google.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://api.fridah.co.ke https://*.googleapis.com https://*.gstatic.com https://*.google.com data: blob:; worker-src 'self' blob:; frame-src 'self' https://*.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(self), payment=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

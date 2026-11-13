@@ -1,0 +1,80 @@
+{
+  "common": {
+    "search": "Tafuta…",
+    "logout": "Toka",
+    "save": "Hifadhi",
+    "cancel": "Ghairi",
+    "submit": "Wasilisha",
+    "loading": "Inapakia…",
+    "yes": "Ndio",
+    "no": "Hapana",
+    "close": "Funga",
+    "viewAll": "Ona zote",
+    "back": "Rudi"
+  },
+  "nav": {
+    "dashboard": "Dashibodi",
+    "properties": "Mali",
+    "units": "Vyumba",
+    "leases": "Mikataba ya Kupanga",
+    "invoices": "Ankara",
+    "maintenance": "Matengenezo",
+    "payments": "Malipo",
+    "bookings": "Uhifadhi",
+    "listings": "Orodha",
+    "jobs": "Kazi",
+    "notifications": "Arifa",
+    "messages": "Ujumbe",
+    "documents": "Nyaraka",
+    "renewals": "Uhuishaji wa Mkataba",
+    "blacklist": "Orodha Nyeusi ya Wapangaji",
+    "settings": "Mipangilio"
+  },
+  "auth": {
+    "welcomeBack": "Karibu tena",
+    "signInPrompt": "Ingia kwenye akaunti yako ya FRIDAH",
+    "emailAddress": "Barua pepe",
+    "password": "Nenosiri",
+    "signIn": "Ingia",
+    "noAccount": "Huna akaunti?",
+    "register": "Jisajili",
+    "invalidCredentials": "Barua pepe au nenosiri sio sahihi."
+  },
+  "theme": {
+    "light": "Mwanga",
+    "dark": "Giza",
+    "toggle": "Badilisha hali ya giza"
+  },
+  "language": {
+    "english": "Kiingereza",
+    "swahili": "Kiswahili",
+    "select": "Lugha"
+  },
+  "riskScore": {
+    "title": "Alama ya Hatari ya Mpangaji",
+    "onTimeRate": "Kiwango cha malipo kwa wakati",
+    "flags": "Alama za orodha nyeusi",
+    "kycVerified": "KYC imethibitishwa",
+    "monthsOnPlatform": "Miezi kwenye jukwaa"
+  },
+  "blacklist": {
+    "flagTenant": "Weka alama mpangaji",
+    "reason": "Sababu",
+    "details": "Maelezo",
+    "amountOwed": "Kiasi kinachodaiwa",
+    "respond": "Jibu",
+    "active": "Hai",
+    "disputed": "Inapingwa",
+    "removed": "Imeondolewa"
+  },
+  "renewal": {
+    "title": "Uhuishaji wa Mkataba",
+    "proposedRent": "Kodi inayopendekezwa",
+    "proposedTerm": "Muda unaopendekezwa",
+    "accept": "Kubali uhuishaji",
+    "decline": "Kataa uhuishaji",
+    "pending": "Inasubiri jibu lako",
+    "accepted": "Imekubaliwa",
+    "declined": "Imekataliwa"
+  }
+}

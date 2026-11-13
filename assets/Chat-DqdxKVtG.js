@@ -1,0 +1,1 @@
+import{F as e,O as t,v as n,w as r}from"./vue.runtime.esm-bundler-uMuKxGAF.js";import{t as i}from"./ChatPanel-BMPLwwJR.js";t();var a=r({__name:`Chat`,setup(t){return(t,r)=>(e(),n(i,{accent:`agency`}))}});export{a as default};

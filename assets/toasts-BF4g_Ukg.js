@@ -1,0 +1,1 @@
+import{n as e}from"./pinia-C8WmMs9U.js";import{J as t,tt as n}from"./vue.runtime.esm-bundler-uMuKxGAF.js";t();var r=e(`toasts`,()=>{let e=n([]),t=0;function r(n,r={}){let a=++t;e.value.push({id:a,title:n,body:r.body,tone:r.tone??`ok`}),setTimeout(()=>i(a),r.ms??3200)}function i(t){e.value=e.value.filter(e=>e.id!==t)}return{items:e,push:r,dismiss:i}});export{r as t};
