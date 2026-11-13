@@ -54,3 +54,6 @@ Thumbs.db
 # --- Logs ---
 *.log
 logs/
+
+# Android debug signing key
+**/debug.keystore
